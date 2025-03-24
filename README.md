@@ -2,6 +2,6 @@
 Development of copy version of Stack-lands game for studying purpose.
 
 
-#Preperation
+# Preperation
 
 Install and setup Unity develpoment environment.
