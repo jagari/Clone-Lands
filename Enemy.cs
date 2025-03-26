@@ -1,9 +1,10 @@
 using UnityEngine;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
     new Rigidbody2D rigidbody2D;
-    [SerializeField] float moveSpeed = 10;
+    const float moveSpeed = 12;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,11 +16,21 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        EnemyMove(Vector2.down);
         
     }
-    private void EnemyMove(Vector2 direction)
+    public void EnemyMove(Vector2 direction, float distance)
     {
+        
         rigidbody2D.linearVelocity = moveSpeed * direction;
+
+        StartCoroutine(WaitToStopMove(distance));
+    }
+
+    IEnumerator WaitToStopMove(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+
+        rigidbody2D.linearVelocity = Vector2.zero;
     }
 }
+
