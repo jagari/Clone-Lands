@@ -13,3 +13,5 @@ Version of Unity used for development is *6000.0.40f1 (LTS)*
 
 currently, I am building a different game to understand how to use Unity Engine.
 
+Simple Gallager Game madee out of free assets from Unity Assets Store.
+
